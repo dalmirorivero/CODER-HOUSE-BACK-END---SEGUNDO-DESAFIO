@@ -1,0 +1,21 @@
+{
+  "name": "coder-house-back-end---segundo-desafio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalmirorivero/CODER-HOUSE-BACK-END---SEGUNDO-DESAFIO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dalmirorivero/CODER-HOUSE-BACK-END---SEGUNDO-DESAFIO/issues"
+  },
+  "homepage": "https://github.com/dalmirorivero/CODER-HOUSE-BACK-END---SEGUNDO-DESAFIO#readme"
+}
