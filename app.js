@@ -23,13 +23,13 @@ const send = async () => {
     console.log(products);
 
     // DEVUELVE UN PRODUCTO DEL ARREGLO SELECCION POR ID
-    const productbyid = await manager.getProductById(product.id); //remplazar product.id por el id del producto a seleccionar
+    const productbyid = await manager.getProductById(0); //remplazar '0' por el id del producto a seleccionar
     if (productbyid) {
         console.log("Producto encontrado!", productbyid)
     }
 
     // MODIFICA UN PRODUCTO DEL ARREGLO SELECCIONADO POR ID
-    const productUpdateId = (product.id); //remplazar product.id por el id del producto a modificar
+    const productUpdateId = (0); //remplazar '0' por el id del producto a modificar
     const updateFields = {
         title: 'K',
         price: 100,
@@ -41,7 +41,7 @@ const send = async () => {
         console.log("Producto actualizado!", updatedProduct)}
     
     // ELIMINA UN PRODUCTO DEL ARREGLO SELECCIONADO POR ID
-    const deletedProduct = await manager.deleteProductById(product.id); //remplazar product.id por el id del producto a eliminar
+    const deletedProduct = await manager.deleteProductById(0); //remplazar '0' por el id del producto a eliminar
     if (deletedProduct){
     console.log("Producto eliminado correctamente!")
     }
