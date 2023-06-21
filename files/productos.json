@@ -7,5 +7,14 @@
 		"code": "ab155",
 		"stock": 37,
 		"id": 1
+	},
+	{
+		"title": "K",
+		"description": "Transparente",
+		"price": 100,
+		"thumbnail": "no img",
+		"code": "ab150",
+		"stock": 1,
+		"id": 2
 	}
 ]

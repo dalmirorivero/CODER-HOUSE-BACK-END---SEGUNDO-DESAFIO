@@ -5,11 +5,11 @@ const manager = new ProductManager ('./files/productos.json');
 const send = async () => {
     // CREA UN NUEVO PRODUCTO ALMACENADO EN EL ARREGLO
     const product = {
-    title: 'Regla', 
+    title: 'Compas', 
     description: 'Transparente', 
     price: 80, 
     thumbnail: 'no img', 
-    code: 'ab154', 
+    code: 'ab150', 
     stock: 37
     };
     
@@ -23,13 +23,13 @@ const send = async () => {
     console.log(products);
 
     // DEVUELVE UN PRODUCTO DEL ARREGLO SELECCION POR ID
-    const productbyid = await manager.getProductById(5);
+    const productbyid = await manager.getProductById(product.id); //remplazar product.id por el id del producto a seleccionar
     if (productbyid) {
         console.log("Producto encontrado!", productbyid)
     }
 
     // MODIFICA UN PRODUCTO DEL ARREGLO SELECCIONADO POR ID
-    const productUpdateId = 6;
+    const productUpdateId = (product.id); //remplazar product.id por el id del producto a modificar
     const updateFields = {
         title: 'K',
         price: 100,
@@ -41,7 +41,7 @@ const send = async () => {
         console.log("Producto actualizado!", updatedProduct)}
     
     // ELIMINA UN PRODUCTO DEL ARREGLO SELECCIONADO POR ID
-    const deletedProduct = await manager.deleteProductById(2);
+    const deletedProduct = await manager.deleteProductById(product.id); //remplazar product.id por el id del producto a eliminar
     if (deletedProduct){
     console.log("Producto eliminado correctamente!")
     }
