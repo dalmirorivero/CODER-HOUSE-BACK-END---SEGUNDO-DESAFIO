@@ -1,12 +1,12 @@
 import fs from 'fs';
 
-// const path = './files/productos.json'
-
 export default class ProductManager {
     constructor(path) {
         this.path = path;
         this.products = [];
     }
+
+    // CREA UN NUEVO PRODUCTO, LE ASIGNA UN ID AUTOINCREMENTABLE Y LO ALMACENA DENTRO DE UN ARREGLO
 
     addProduct = async (product) => {
         try {
@@ -29,11 +29,14 @@ export default class ProductManager {
             products.push(product);
 
             await fs.promises.writeFile(this.path, JSON.stringify(products, null, '\t'))
+            console.log("Producto creado con exito!");
             return product;
         } catch (error) {
-        console.log(error)
+            console.log(error)
         }
     }
+
+    // LEE EL ARCHIVO DE PRODUCTOS Y LOS DEVUELVE EN FORMATO DE ARREGLO
 
     getProducts = async () => {
         try {
@@ -45,9 +48,11 @@ export default class ProductManager {
                 return [];
             }
         } catch (error) {
-        console.log(error)
+            console.log(error)
         }
     }
+
+    // RECIBE UN ID Y DEVUELVE EL PRODUCTO SELECCIONA EN FORMATO DE ARREGLO
 
     async getProductById(ProductID) {
         const products = await this.getProducts();
@@ -60,12 +65,13 @@ export default class ProductManager {
         return productIndex;
     }
 
+    // RECIBE UN ID Y UN PARAMETRO PARA ACTUALIZAR UN PRODUCTO DEL ARREGLO
 
     async updateProduct(productId, updatedFields) {
         const products = await this.getProducts();
-        const productIndex = products.findIndex((product) => product.id === productId);
+        const productIndex = products.find((product) => product.id === productId);
 
-        if (productIndex === -1) {
+        if (!productIndex) {
             console.log("Producto a actualizar no encontrado!");
             return;
         }
@@ -80,16 +86,18 @@ export default class ProductManager {
             await fs.promises.writeFile(this.path, JSON.stringify(products, null, '\t'));
             return updatedProduct;
         } catch (error) {
-        console.log(error);
+            console.log(error);
         }
     }
+
+    // RECIBE UN ID PARA ELIMINAR UN PRODUCTO DEL ARREGLO
 
     deleteProductById = async (productId) => {
         try {
             const products = await this.getProducts();
-            const productIndex = products.findIndex((product) => product.id === productId);
+            const productIndex = products.find((product) => product.id === productId);
 
-            if (productIndex === -1) {
+            if (!productIndex) {
                 console.log("Producto a eliminar no encontrado!");
                 return false;
             }
@@ -99,8 +107,8 @@ export default class ProductManager {
             await fs.promises.writeFile(this.path, JSON.stringify(products, null, '\t'));
             return true;
         } catch (error) {
-        console.log(error);
-        return false;
+            console.log(error);
+            return false;
         }
     }
 }

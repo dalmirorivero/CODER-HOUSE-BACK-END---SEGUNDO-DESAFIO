@@ -9,15 +9,12 @@ const send = async () => {
     description: 'Transparente', 
     price: 80, 
     thumbnail: 'no img', 
-    code: 'ab150', 
+    code: 'ab152', 
     stock: 37
     };
     
     await manager.addProduct(product);
-    if(product){
-        console.log("Producto creado con exito!")
-    }
-
+    
     // DEVUELVE TODOS LOS PRODUCTOS EN FORMATO DE ARREGLO
     const products = await manager.getProducts();
     console.log(products);

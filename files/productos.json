@@ -1,20 +1,29 @@
 [
 	{
-		"title": "Regla",
+		"title": "Compas",
 		"description": "Transparente",
 		"price": 80,
 		"thumbnail": "no img",
-		"code": "ab155",
+		"code": "ab151",
 		"stock": 37,
 		"id": 1
 	},
 	{
-		"title": "K",
+		"title": "Compas",
 		"description": "Transparente",
-		"price": 100,
+		"price": 80,
 		"thumbnail": "no img",
-		"code": "ab150",
-		"stock": 1,
+		"code": "ab151",
+		"stock": 37,
 		"id": 2
+	},
+	{
+		"title": "Compas",
+		"description": "Transparente",
+		"price": 80,
+		"thumbnail": "no img",
+		"code": "ab152",
+		"stock": 37,
+		"id": 3
 	}
 ]
